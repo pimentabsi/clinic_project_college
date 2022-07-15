@@ -3,43 +3,27 @@ package modelclass;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Paciente {
-    private String nome;
-    private String email;
+public class Paciente extends Pessoa {
     private LocalDate dataDeNascimento;
+    private static int proximoCodigo = 0;
     private static DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    private String codigo;
-    private static int contador=1;
 
-    public Paciente(String nome, String email, LocalDate dataDeNascimento){
-        this.nome = nome;
-        this.email = email;
+    public Paciente(String nome, String email, LocalDate dataDeNascimento) {
+        super(nome, email);
         this.dataDeNascimento = dataDeNascimento;
-        this.codigo = "PA" + contador++;
+        this.codigo = " P" + ++proximoCodigo;
     }
 
-    public String toString() {
-        return getDescricao();
+    public Paciente(Paciente paciente) {
+        super(paciente.nome, paciente.email);
+        this.dataDeNascimento = paciente.dataDeNascimento;
     }
 
-    public String getNome(){
-        return this.nome;
-    }
-
-    public String getEmail(){
-        return this.email;
-    }
-
-    public String getCro(){
-        return this.dataDeNascimento.format(formatador);
-    }
-
-    public String getCodigo(){
-        return this.codigo;
+    public LocalDate getDataDeNascimento() {
+        return this.dataDeNascimento;
     }
 
     public String getDescricao() {
-        return "Sr(a) " + this.nome + " -Data de Nascimento: " + dataDeNascimento.format(formatador) +  " -Email: " + this.email;
+        return "Sr(a): " + this.nome + " -Email: " + this.email + " -Data de Nascimento: " + dataDeNascimento.format(formatador);
     }
-
 }

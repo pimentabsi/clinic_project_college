@@ -1,36 +1,41 @@
 package modelclass;
 
 public class Procedimento {
-    String nome;
-    double preco;
+    private String nome;
+    private double preco;
+    private static int proximoCodigo = 0;
     private String codigo;
-    private static int contador=1;
 
-
-    public Procedimento(String nome, double preco){
+    public Procedimento(String nome, double preco) {
         this.nome = nome;
         this.preco = preco;
-        this.codigo = "PO" + contador++;
+        this.codigo = " PO" + ++proximoCodigo;
+    }
+
+    public Procedimento(Procedimento procedimento) {
+        this.nome = procedimento.nome;
+        this.preco = procedimento.preco;
+        this.codigo = procedimento.codigo;
     }
 
     public String toString() {
         return getDescricao();
     }
 
-    public String getNome(){
+    public String getNome() {
         return this.nome;
     }
 
-    public double getPreco(){
+    public Double getPreco() {
         return this.preco;
     }
 
-    public String getCodigo(){
+    public String getCodigo() {
         return this.codigo;
     }
 
     public String getDescricao() {
-        return this.nome + " - Custo: " + this.preco;
+        return this.nome + " -Preco: " + this.preco + "R$";
     }
 
 }
