@@ -31,10 +31,7 @@ public abstract class Dentista extends Pessoa {
     public String getDescricao() {
         return "Dr(a): " + this.nome + " -Email: " + this.email + " -CRO: " + this.cro;
     }
-<<<<<<< Updated upstream
 
     public abstract String getDentista();
 
-=======
->>>>>>> Stashed changes
 }
