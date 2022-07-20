@@ -37,11 +37,7 @@ public class Consulta {
     }
 
     public Dentista getDentista() {
-        if(this.dentista.getDentista() == "Dentista Assalariado"){
-            return new DentistaAssalariado(this.dentista);
-        }else {
-            return new DentistaComissionado(this.dentista);
-        }
+        return this.dentista.getObjectDentista();
     }
 
     public double valorConsulta() {
