@@ -40,18 +40,50 @@ public class Principal {
         Procedimento x4 =
                 new Procedimento("Limpeza", 200);
         Consulta c1 = new Consulta(d1, p1);
-        c1.addProcedimento(x1);
+        if(c1.addProcedimento(x1)){
+            System.out.println("Procedimento adcionado com sucesso");
+        }else{
+            System.out.println("Procedimento não adcionado");
+        }
         Consulta c2 = new Consulta(d1, p2);
-        c2.addProcedimento(x2);
+        if(c2.addProcedimento(x2)){
+            System.out.println("Procedimento adcionado com sucesso");
+        }else{
+            System.out.println("Procedimento não adcionado");
+        }
         Consulta c3 = new Consulta(d2, p3);
-        c3.addProcedimento(x3);
+        if(c3.addProcedimento(x3)){
+            System.out.println("Procedimento adcionado com sucesso");
+        }else{
+            System.out.println("Procedimento não adcionado");
+        }
         Consulta c4 = new Consulta(d2, p4);
-        c4.addProcedimento(x4);
+        if(c4.addProcedimento(x4)){
+            System.out.println("Procedimento adcionado com sucesso");
+        }else{
+            System.out.println("Procedimento não adcionado");
+        }
         Agenda a1 = new Agenda();
-        a1.addConsulta(c1);
-        a1.addConsulta(c2);
-        a1.addConsulta(c3);
-        a1.addConsulta(c4);
+        if(a1.addConsulta(c1)){
+            System.out.println("Consulta adcionada com sucesso");
+        }else{
+            System.out.println("Consulta não adcionada");
+        }
+        if(a1.addConsulta(c2)){
+            System.out.println("Consulta adcionada com sucesso");
+        }else{
+            System.out.println("Consulta não adcionada");
+        }
+        if(a1.addConsulta(c3)){
+            System.out.println("Consulta adcionada com sucesso");
+        }else{
+            System.out.println("Consulta não adcionada");
+        }
+        if(a1.addConsulta(c4)){
+            System.out.println("Consulta adcionada com sucesso");
+        }else{
+            System.out.println("Consulta não adcionada");
+        }
 
         System.out.println("-------Teste da Parte 1-------\n");
         System.out.println(d1+"\n"+d2);
@@ -61,7 +93,7 @@ public class Principal {
         System.out.println("\n-------Teste da Parte 2-------\n");
         System.out.println(c1+"\n"+c2);
         System.out.println("Valor da Consulta 1: " +c1.valorConsulta());
-        System.out.println("Valor da Consulta 1: " +c2.valorConsulta());
+        System.out.println("Valor da Consulta 2: " +c2.valorConsulta());
         System.out.println(a1);
         System.out.println("Faturamento da Clinica: " +a1.faturamento());
         System.out.println("Quantidade de consultas marcadas: " +a1.qtdConsultas());
@@ -77,13 +109,21 @@ public class Principal {
         System.out.println(x4.getNome() + (" Codigo: " + x4.getCodigo()));
 
         System.out.println("\n-------Teste da Parte 3-------\n");
-        a1.removeConsulta(c4);
+        if(a1.removeConsulta(c4)){
+            System.out.println("Consulta removida com sucesso");
+        }else{
+            System.out.println("Consulta não removida ou não encontrada");
+        }
         if(a1.verificaConsulta(c4)) {
             System.out.println("Consulta encontrada na agenda!");
         }else {
             System.out.println("Consulta nao encontrada na agenda!");
         }
-        a1.addConsulta(c4);
+        if(a1.addConsulta(c4)){
+            System.out.println("Consulta adcionada com sucesso");
+        }else{
+            System.out.println("Consulta não adcionada");
+        }
         if(a1.verificaConsulta(c4)) {
             System.out.println("Consulta encontrada na agenda!");
         }else {

@@ -28,11 +28,9 @@ public class DentistaComissionado extends Dentista {
     public String getDentista() {
         return "É um dentista comissionado";
     }
-
     public double getPorcentagemComissao() {
         return this.porcentagemComissao;
     }
-
     public Dentista getObjectDentista(){
         return new DentistaComissionado(this.nome, this.email, this.cro, this.porcentagemComissao);
     }

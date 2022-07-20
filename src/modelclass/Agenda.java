@@ -12,12 +12,20 @@ public class Agenda {
         return getDescricao();
     }
 
-    public void addConsulta(Consulta consulta) {
-        this.consulta.add(consulta);
+    public boolean addConsulta(Consulta consulta) {
+        if(this.consulta.add(consulta)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
-    public void removeConsulta(Consulta consulta) {
-        this.consulta.remove(consulta);
+    public boolean removeConsulta(Consulta consulta) {
+        if(this.consulta.remove(consulta)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public boolean verificaConsulta(Consulta consulta) {

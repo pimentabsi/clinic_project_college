@@ -22,9 +22,10 @@ public abstract class Dentista extends Pessoa {
     }
     public abstract double calculaSalario(double valor);
     public abstract double getSalario();
-    public String getDescricao() {
-        return "Dr(a): " + this.nome + " -Email: " + this.email + " -CRO: " + this.cro;
-    }
     public abstract String getDentista();
     public abstract Dentista getObjectDentista();
+    public String getDescricao() {
+        return "Dr(a): " + this.nome + " -Email: " +
+                this.email + " -CRO: " + this.cro;
+    }
 }

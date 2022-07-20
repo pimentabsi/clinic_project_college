@@ -16,13 +16,21 @@ public class Consulta {
         return getDescricao();
     }
 
-    public void addProcedimento(Procedimento procedimento) {
-        this.procedimento.add(procedimento);
+    public boolean addProcedimento(Procedimento procedimento) {
         this.dentista.calculaSalario(procedimento.getPreco());
+        if(this.procedimento.add(procedimento)) {
+            return true;
+        }else{
+            return false;
+        }
     }
 
-    public void removeProcedimento(Procedimento procedimento) {
-        this.procedimento.remove(procedimento);
+    public boolean removeProcedimento(Procedimento procedimento) {
+        if(this.procedimento.remove(procedimento)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public boolean verificaProcedimento(Procedimento procedimento) {
@@ -53,7 +61,8 @@ public class Consulta {
         for(int i=0;i<this.procedimento.size();i++) {
             consultas = this.procedimento.get(i).getNome() + ", " + consultas;
         }
-        return consultas + "para o paciente: " + this.paciente.getNome() + " realizada pelo Dr(a): " + this.dentista.getNome();
+        return consultas + "para o paciente: " + this.paciente.getNome() +
+                " realizada pelo Dr(a): " + this.dentista.getNome();
     }
 
 }

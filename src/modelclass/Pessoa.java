@@ -27,6 +27,6 @@ public class Pessoa {
     }
 
     public String getDescricao() {
-        return this.nome + " -Email:" + this.email;
+        return getNome() + " -Email:" + getEmail();
     }
 }

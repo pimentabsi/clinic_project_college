@@ -24,6 +24,8 @@ public class Paciente extends Pessoa {
     }
 
     public String getDescricao() {
-        return "Sr(a): " + this.nome + " -Email: " + this.email + " -Data de Nascimento: " + dataDeNascimento.format(formatador);
+        return "Sr(a): " + this.nome + " -Email: " +
+                this.email + " -Data de Nascimento: " +
+                getDataDeNascimento().format(formatador);
     }
 }
