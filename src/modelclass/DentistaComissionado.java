@@ -16,11 +16,13 @@ public class DentistaComissionado extends Dentista {
         this.salario=dentista.getSalario();
     }
 
+    @Override
     public double calculaSalario(double valor) {
         this.salario = (this.porcentagemComissao * valor) + this.salario;
         return this.salario;
     }
 
+    @Override
     public double getSalario() {
         return this.salario;
     }
@@ -29,6 +31,7 @@ public class DentistaComissionado extends Dentista {
         return this.porcentagemComissao;
     }
 
+    @Override
     public Dentista getDentista(){
         return new DentistaComissionado(this.nome, this.email, this.cro, this.porcentagemComissao);
     }

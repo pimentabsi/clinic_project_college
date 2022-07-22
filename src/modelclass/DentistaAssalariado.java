@@ -11,13 +11,16 @@ public class DentistaAssalariado extends Dentista {
         this.salario = dentista.calculaSalario(0.1);
     }
 
+    @Override
     public double calculaSalario(double valor) {
         return this.salario;
     }
 
+    @Override
     public double getSalario() {
         return this.salario;
     }
+    @Override
     public Dentista getDentista(){
         return new DentistaAssalariado(this.nome, this.email, this.cro, this.salario);
     }

@@ -23,6 +23,7 @@ public class Paciente extends Pessoa {
         return this.dataDeNascimento;
     }
 
+    @Override
     public String getDescricao() {
         return "Sr(a) " + super.getDescricao() + " -Data de Nascimento: " +
                 getDataDeNascimento().format(formatador);

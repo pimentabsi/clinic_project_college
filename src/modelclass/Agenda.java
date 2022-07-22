@@ -7,7 +7,7 @@ public class Agenda {
     public Agenda(){
         this.listaConsulta = new ArrayList<Consulta>();
     }
-
+    @Override
     public String toString() {
         return getAgenda();
     }

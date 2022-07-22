@@ -18,6 +18,7 @@ public class Procedimento {
         this.codigo = procedimento.codigo;
     }
 
+    @Override
     public String toString() {
         return getProcedimento();
     }

@@ -12,6 +12,7 @@ public class Consulta {
         this.listaProcedimento = new ArrayList<Procedimento>();
     }
 
+    @Override
     public String toString() {
         return getConsulta();
     }
