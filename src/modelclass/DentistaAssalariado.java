@@ -18,12 +18,7 @@ public class DentistaAssalariado extends Dentista {
     public double getSalario() {
         return this.salario;
     }
-
-    public String getDentista() {
-        return "É um dentista assalariado";
-    }
-
-    public Dentista getObjectDentista(){
+    public Dentista getDentista(){
         return new DentistaAssalariado(this.nome, this.email, this.cro, this.salario);
     }
 }
